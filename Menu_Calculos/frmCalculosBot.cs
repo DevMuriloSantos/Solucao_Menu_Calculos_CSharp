@@ -16,6 +16,20 @@ namespace Menu_Calculos
         {
             InitializeComponent();
         }
+        
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+
+            calculatorPanel.Left = (this.ClientSize.Width - calculatorPanel.Width) / 2;
+            calculatorPanel.Top = (this.ClientSize.Height - calculatorPanel.Height) / 2;
+        } // centraliza os componentes
+        
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            OnResize(EventArgs.Empty);
+        } // essa função faz o programa iniciar centralizado
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -43,10 +57,88 @@ namespace Menu_Calculos
 
         private void btnSomar_Click(object sender, EventArgs e)
         {
-            double a = double.Parse(txtN1.Text); // var numérica
-            double b = double.Parse(txtN2.Text);
-            lblSinal.Text = "+"; // muda o texto
-            lblResultado.Text = (a + b).ToString(); // precisa converter pois é esperado um text
+            try
+            {
+                double a = double.Parse(txtN1.Text); // var numérica
+                double b = double.Parse(txtN2.Text);
+                lblSinal.Text = "+"; // muda o texto
+                lblResultado.Text = (a + b).ToString(); // precisa converter pois é esperado um text
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Só é permitido números neste campo!");
+                button2_Click(sender, e);
+            }
+        }
+
+        private void btn_subtrair_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double a = double.Parse(txtN1.Text); // var numérica
+                double b = double.Parse(txtN2.Text);
+                lblSinal.Text = "-"; // muda o texto
+                lblResultado.Text = (a - b).ToString(); // precisa converter pois é esperado um text
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Só é permitido números neste campo!");
+                button2_Click(sender, e);
+            }
+        }
+
+        private void btn_multiplicar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double a = double.Parse(txtN1.Text); // var numérica
+                double b = double.Parse(txtN2.Text);
+                MessageBox.Show($"Valor de a: {a}. Valor de b: {b}");
+                lblSinal.Text = "*"; // muda o texto
+                lblResultado.Text = (a * b).ToString(); // precisa converter pois é esperado um text
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Só é permitido números neste campo!");
+                button2_Click(sender, e);
+            }
+        }
+
+        private void btn_dividir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                double a = double.Parse(txtN1.Text); // var numérica
+                double b = double.Parse(txtN2.Text);
+                lblSinal.Text = "/"; // muda o texto
+                lblResultado.Text = (a / b).ToString(); // precisa converter pois é esperado um text
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Só é permitido números neste campo!");
+                button2_Click(sender, e);
+            }
+            catch (DivideByZeroException)
+            {
+                MessageBox.Show("Não é possivel fazer divisão por zero!");
+            }
+        }
+
+        private void btnParImpar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void frmCalculosBot_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void btnComparar_Click(object sender, EventArgs e)
+        {
         }
     }
 }
