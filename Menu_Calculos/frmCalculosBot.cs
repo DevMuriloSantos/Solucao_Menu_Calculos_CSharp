@@ -93,7 +93,6 @@ namespace Menu_Calculos
             {
                 double a = double.Parse(txtN1.Text); // var numérica
                 double b = double.Parse(txtN2.Text);
-                MessageBox.Show($"Valor de a: {a}. Valor de b: {b}");
                 lblSinal.Text = "*"; // muda o texto
                 lblResultado.Text = (a * b).ToString(); // precisa converter pois é esperado um text
             }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\MDI_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\MDI_Menu.Designer.cs">
+      <DependentUpon>MDI_Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCalculosBot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\MDI_Menu.resx">
+      <DependentUpon>MDI_Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCalculosBot.resx">
       <DependentUpon>frmCalculosBot.cs</DependentUpon>
     </EmbeddedResource>
