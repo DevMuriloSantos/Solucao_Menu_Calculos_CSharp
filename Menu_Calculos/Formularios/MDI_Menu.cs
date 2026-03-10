@@ -21,5 +21,14 @@ namespace Menu_Calculos.Formularios
         {
 
         }
+
+        private void comBotõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCalculosBot frmCalculos = new frmCalculosBot(); 
+            // new frmCalculosBot() cria uma nova janela
+            
+            frmCalculos.ShowDialog(); 
+            // ShowDialog() impede de clicar na tela de fundo enquando frmCalculosBot estiver aberto
+        }
     }
 }

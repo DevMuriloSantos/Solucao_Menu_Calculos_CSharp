@@ -16,7 +16,8 @@ namespace Menu_Calculos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCalculosBot());
+            Application.Run(new Formularios.MDI_Menu());
+            //Application.Run(new frmCalculosBot());
         }
     }
 }
