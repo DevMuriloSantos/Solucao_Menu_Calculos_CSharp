@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics; // System.Diagnostics.Process -> permite iniciar programas externos
 
 namespace Menu_Calculos.Formularios
 {
@@ -29,6 +30,14 @@ namespace Menu_Calculos.Formularios
             
             frmCalculos.ShowDialog(); 
             // ShowDialog() impede de clicar na tela de fundo enquando frmCalculosBot estiver aberto
+        }
+
+        private void blocoDeNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "notepad.exe"; // permite a
+
+            Process.Start(startInfo);
         }
     }
 }

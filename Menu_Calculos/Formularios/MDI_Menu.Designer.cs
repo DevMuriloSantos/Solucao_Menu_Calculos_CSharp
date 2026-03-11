@@ -61,41 +61,44 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Desktop;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.cálculosToolStripMenuItem, this.janelaaToolStripMenuItem, this.ajudaToolStripMenuItem });
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(678, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(666, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // cálculosToolStripMenuItem
             // 
             this.cálculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.comBotõesToolStripMenuItem, this.comRadioButtonsToolStripMenuItem, this.especiaisToolStripMenuItem, this.toolStripMenuItem1 });
+            this.cálculosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.cálculosToolStripMenuItem.Name = "cálculosToolStripMenuItem";
             this.cálculosToolStripMenuItem.Size = new System.Drawing.Size(64, 22);
             this.cálculosToolStripMenuItem.Text = "Cálculos";
             // 
             // comBotõesToolStripMenuItem
             // 
+            this.comBotõesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("comBotõesToolStripMenuItem.Image")));
             this.comBotõesToolStripMenuItem.Name = "comBotõesToolStripMenuItem";
             this.comBotõesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.comBotõesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.comBotõesToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.comBotõesToolStripMenuItem.Text = "Com Botões";
             this.comBotõesToolStripMenuItem.Click += new System.EventHandler(this.comBotõesToolStripMenuItem_Click);
             // 
             // comRadioButtonsToolStripMenuItem
             // 
             this.comRadioButtonsToolStripMenuItem.Name = "comRadioButtonsToolStripMenuItem";
-            this.comRadioButtonsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.comRadioButtonsToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.comRadioButtonsToolStripMenuItem.Text = "Com RadioButtons";
             // 
             // especiaisToolStripMenuItem
             // 
             this.especiaisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.visorÚnicoToolStripMenuItem, this.orientadaAObjetosToolStripMenuItem });
             this.especiaisToolStripMenuItem.Name = "especiaisToolStripMenuItem";
-            this.especiaisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.especiaisToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.especiaisToolStripMenuItem.Text = "Especiais";
             // 
             // visorÚnicoToolStripMenuItem
@@ -113,11 +116,12 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(185, 6);
             // 
             // janelaaToolStripMenuItem
             // 
             this.janelaaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.cascataToolStripMenuItem, this.horizontalmenteToolStripMenuItem, this.vertucalmenteToolStripMenuItem });
+            this.janelaaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.janelaaToolStripMenuItem.Name = "janelaaToolStripMenuItem";
             this.janelaaToolStripMenuItem.Size = new System.Drawing.Size(51, 22);
             this.janelaaToolStripMenuItem.Text = "Janela";
@@ -143,6 +147,7 @@
             // ajudaToolStripMenuItem
             // 
             this.ajudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.sobreToolStripMenuItem, this.desenvolvedoresToolStripMenuItem });
+            this.ajudaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
             this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 22);
             this.ajudaToolStripMenuItem.Text = "Ajuda";
@@ -165,7 +170,7 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.toolStripButton2, this.toolStripButton1, this.toolStripDropDownButton1 });
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(678, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(666, 31);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -203,6 +208,7 @@
             this.blocoDeNotasToolStripMenuItem.Name = "blocoDeNotasToolStripMenuItem";
             this.blocoDeNotasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.blocoDeNotasToolStripMenuItem.Text = "Bloco de notas";
+            this.blocoDeNotasToolStripMenuItem.Click += new System.EventHandler(this.blocoDeNotasToolStripMenuItem_Click);
             // 
             // calculadoraWindowsToolStripMenuItem
             // 
@@ -220,10 +226,10 @@
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.toolStripStatusLabel1, this.toolStripStatusLabel2 });
-            this.statusStrip1.Location = new System.Drawing.Point(0, 302);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 268);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(678, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(666, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -243,7 +249,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 324);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(666, 290);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
