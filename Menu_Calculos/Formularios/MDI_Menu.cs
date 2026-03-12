@@ -39,5 +39,29 @@ namespace Menu_Calculos.Formularios
 
             Process.Start(startInfo);
         }
+
+        private void cálculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MDI_Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Deseja realmente sair?", "Saindo...",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, 
+                MessageBoxDefaultButton.Button2) == DialogResult.No){
+                e.Cancel = true;
+            }
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            data_hora_label.Text = DateTime.Now.ToString();
+        }
     }
 }
