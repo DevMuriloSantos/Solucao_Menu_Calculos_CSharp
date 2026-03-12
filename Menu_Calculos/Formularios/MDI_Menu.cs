@@ -20,7 +20,7 @@ namespace Menu_Calculos.Formularios
 
         private void MDI_Menu_Load(object sender, EventArgs e)
         {
-
+            nameUserLabel.Text = $"Usuário atual: {Environment.UserDomainName} \\ {Environment.UserName}";
         }
 
         private void comBotõesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,7 +61,30 @@ namespace Menu_Calculos.Formularios
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            data_hora_label.Text = DateTime.Now.ToString();
+            data_hora_label.Text = $"Data: {DateTime.Now.ToString("dd/MM/yyyy")} Horas: {DateTime.Now.ToString("HH:mm:ss")}";
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void calculadoraWindowsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "calculator.exe"; // permite a abertura do notepad.
+
+            Process.Start(startInfo);
+            */
+        }
+
+        private void navegadorWebToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = "firefox.exe";
+
+            Process.Start(startInfo);
         }
     }
 }
