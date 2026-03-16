@@ -25,10 +25,13 @@ namespace Menu_Calculos.Formularios
 
         private void comBotõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCalculosBot frmCalculos = new frmCalculosBot(); 
-            // new frmCalculosBot() cria uma nova janela da calculadora
+            frmCalculosBot frmCalculos = new frmCalculosBot();
+            frmCalculos.MdiParent = this; // indica se essa nova instancia é parente de MDI
+            //this indica o form MDI atual
+
+            // new frmCalculosBot() cria/instância uma nova janela da calculadora
             
-            frmCalculos.ShowDialog(); 
+            frmCalculos.Show(); 
             // ShowDialog() impede de clicar na tela de fundo enquando frmCalculosBot estiver aberto
         }
 
@@ -85,6 +88,12 @@ namespace Menu_Calculos.Formularios
             startInfo.FileName = "firefox.exe";
 
             Process.Start(startInfo);
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            //frmCalculosBot frmCalculosBot = new frmCalculosBot();
+            //frmCalculosBot.();
         }
     }
 }
