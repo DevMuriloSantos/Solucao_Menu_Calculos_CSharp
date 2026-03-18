@@ -25,14 +25,23 @@ namespace Menu_Calculos.Formularios
 
         private void comBotõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCalculosBot frmCalculos = new frmCalculosBot();
-            frmCalculos.MdiParent = this; // indica se essa nova instancia é parente de MDI
-            //this indica o form MDI atual
+            if (MdiChildren.Length == 0) // executa apenas se MdiChildren estiver vazio.
+            {
+                frmCalculosBot frmCalculos = new frmCalculosBot();
+                frmCalculos.MdiParent = this; // indica se essa nova instancia é parente de MDI
+                //this indica o form MDI atual
 
-            // new frmCalculosBot() cria/instância uma nova janela da calculadora
+                // new frmCalculosBot() cria/instância uma nova janela da calculadora
+
             
-            frmCalculos.Show(); 
-            // ShowDialog() impede de clicar na tela de fundo enquando frmCalculosBot estiver aberto
+                frmCalculos.Show();
+                // ShowDialog() impede de clicar na tela de fundo enquando frmCalculosBot estiver aberto
+            }
+            else
+            {
+                MessageBox.Show("Uma janela já foi aberta. Feche-a para abrir uma nova!",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void blocoDeNotasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,6 +103,22 @@ namespace Menu_Calculos.Formularios
         {
             //frmCalculosBot frmCalculosBot = new frmCalculosBot();
             //frmCalculosBot.();
+        }
+
+        private void comRadioButtonsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MdiChildren.Length == 0)
+            {
+                frmRadio frmRadio = new frmRadio();
+                frmRadio.MdiParent = this;
+                frmRadio.Show();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Uma janela já foi aberta. Feche-a para abrir uma nova!",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }
