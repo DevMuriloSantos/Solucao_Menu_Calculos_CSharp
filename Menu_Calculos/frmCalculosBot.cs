@@ -66,7 +66,8 @@ namespace Menu_Calculos
             }
             catch (FormatException)
             {
-                MessageBox.Show("Só é permitido números neste campo!");
+                MessageBox.Show("Só é permitido números neste campo!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 button2_Click(sender, e);
             }
         }
@@ -82,7 +83,8 @@ namespace Menu_Calculos
             }
             catch (FormatException)
             {
-                MessageBox.Show("Só é permitido números neste campo!");
+                MessageBox.Show("Só é permitido números neste campo!", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 button2_Click(sender, e);
             }
         }
@@ -98,7 +100,8 @@ namespace Menu_Calculos
             }
             catch (FormatException)
             {
-                MessageBox.Show("Só é permitido números neste campo!");
+                MessageBox.Show("Só é permitido números neste campo!", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 button2_Click(sender, e);
             }
         }
@@ -114,12 +117,14 @@ namespace Menu_Calculos
             }
             catch (FormatException)
             {
-                MessageBox.Show("Só é permitido números neste campo!");
+                MessageBox.Show("Só é permitido números neste campo!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 button2_Click(sender, e);
             }
             catch (DivideByZeroException)
             {
-                MessageBox.Show("Não é possivel fazer divisão por zero!");
+                MessageBox.Show("Não é possivel fazer divisão por zero!", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -139,7 +144,8 @@ namespace Menu_Calculos
             }
             catch (FormatException)
             {
-                MessageBox.Show("Só é permitido números neste campo!");
+                MessageBox.Show("Só é permitido números neste campo!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 button2_Click(sender, e);
             }
         }
@@ -176,7 +182,8 @@ namespace Menu_Calculos
             }
             catch (FormatException)
             {
-                MessageBox.Show("Só é permitido números neste campo!");
+                MessageBox.Show("Só é permitido números neste campo!", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 button2_Click(sender, e);
             }
         }

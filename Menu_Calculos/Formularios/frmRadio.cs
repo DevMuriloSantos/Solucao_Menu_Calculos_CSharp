@@ -41,7 +41,8 @@ namespace Menu_Calculos.Formularios
             if (!double.TryParse(textBoxN1.Text, out double a) ||
                 !double.TryParse(textBoxN2.Text, out double b))
             {
-                MessageBox.Show("Digite apenas números válidos!");
+                MessageBox.Show("Digite apenas números válidos!", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             

@@ -83,12 +83,10 @@ namespace Menu_Calculos.Formularios
 
         private void calculadoraWindowsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*
             ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "calculator.exe"; // permite a abertura do notepad.
+            startInfo.FileName = "calc.exe"; // permite a abertura do notepad.
 
             Process.Start(startInfo);
-            */
         }
 
         private void navegadorWebToolStripMenuItem_Click(object sender, EventArgs e)
@@ -119,6 +117,11 @@ namespace Menu_Calculos.Formularios
                 MessageBox.Show("Uma janela já foi aberta. Feche-a para abrir uma nova!",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void cascataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.Cascade);
         }
     }
 }

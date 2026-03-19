@@ -52,6 +52,12 @@
     <Compile Include="Formularios\frmRadio.Designer.cs">
       <DependentUpon>frmRadio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmVisorUnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmVisorUnico.Designer.cs">
+      <DependentUpon>frmVisorUnico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\MDI_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frmRadio.resx">
       <DependentUpon>frmRadio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmVisorUnico.resx">
+      <DependentUpon>frmVisorUnico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MDI_Menu.resx">
       <DependentUpon>MDI_Menu.cs</DependentUpon>
