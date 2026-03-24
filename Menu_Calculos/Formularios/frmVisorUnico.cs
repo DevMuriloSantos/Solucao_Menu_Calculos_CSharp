@@ -39,6 +39,8 @@ namespace Menu_Calculos.Formularios
                 "^"
             };
 
+            if (lblVisor.Text.Substring(0, 1) == "0") lblVisor.Text = "";
+
             if (!operations.Contains(btn.Text))
             {
                 lblVisor.Text += btn.Text;
@@ -46,15 +48,22 @@ namespace Menu_Calculos.Formularios
                 return;
             }
 
-            do
-            {
-                lblResul.Text += btn.Text;
-            } while (true);
+            lblResul.Text += btn.Text;
+
+            //do
+            //{
+            //    lblResul.Text += btn.Text;
+            //} while (true);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             // throw new System.NotImplementedException();
+        }
+
+        private void singleDisplayPanel_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }
