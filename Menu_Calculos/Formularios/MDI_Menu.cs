@@ -18,6 +18,12 @@ namespace Menu_Calculos.Formularios
             InitializeComponent();
         }
 
+        void MDI_Warning_Message()
+        {
+            MessageBox.Show("Uma janela já foi aberta. Feche-a para abrir uma nova!",
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
         private void MDI_Menu_Load(object sender, EventArgs e)
         {
             nameUserLabel.Text = $"Usuário atual: {Environment.UserDomainName} \\ {Environment.UserName}";
@@ -39,8 +45,7 @@ namespace Menu_Calculos.Formularios
             }
             else
             {
-                MessageBox.Show("Uma janela já foi aberta. Feche-a para abrir uma nova!",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MDI_Warning_Message();
             }
         }
 
@@ -114,14 +119,27 @@ namespace Menu_Calculos.Formularios
             }
             else
             {
-                MessageBox.Show("Uma janela já foi aberta. Feche-a para abrir uma nova!",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MDI_Warning_Message();
             }
         }
 
         private void cascataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void visorÚnicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MdiChildren.Length == 0)
+            {
+                frmVisorUnico frmVisorUnico = new frmVisorUnico();
+                frmVisorUnico.MdiParent = this;
+                frmVisorUnico.Show();
+            }
+            else
+            {
+                MDI_Warning_Message();
+            }
         }
     }
 }
