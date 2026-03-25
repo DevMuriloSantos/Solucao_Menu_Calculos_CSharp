@@ -99,7 +99,7 @@
             this.comBotõesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("comBotõesToolStripMenuItem.Image")));
             this.comBotõesToolStripMenuItem.Name = "comBotõesToolStripMenuItem";
             this.comBotõesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.comBotõesToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
+            this.comBotõesToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.comBotõesToolStripMenuItem.Text = "Com Botões";
             this.comBotõesToolStripMenuItem.Click += new System.EventHandler(this.comBotõesToolStripMenuItem_Click);
             // 
@@ -108,7 +108,7 @@
             this.comRadioButtonsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("comRadioButtonsToolStripMenuItem.Image")));
             this.comRadioButtonsToolStripMenuItem.Name = "comRadioButtonsToolStripMenuItem";
             this.comRadioButtonsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.comRadioButtonsToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
+            this.comRadioButtonsToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.comRadioButtonsToolStripMenuItem.Text = "Com RadioButtons";
             this.comRadioButtonsToolStripMenuItem.Click += new System.EventHandler(this.comRadioButtonsToolStripMenuItem_Click);
             // 
@@ -116,7 +116,7 @@
             // 
             this.especiaisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.visorÚnicoToolStripMenuItem, this.orientadaAObjetosToolStripMenuItem });
             this.especiaisToolStripMenuItem.Name = "especiaisToolStripMenuItem";
-            this.especiaisToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
+            this.especiaisToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.especiaisToolStripMenuItem.Text = "Especiais";
             // 
             // visorÚnicoToolStripMenuItem
@@ -135,12 +135,12 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(220, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(212, 6);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             // 
             // janelaaToolStripMenuItem
@@ -384,9 +384,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MDI_Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MDI_Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDI_Menu_FormClosing);
             this.Load += new System.EventHandler(this.MDI_Menu_Load);
             this.menuStrip1.ResumeLayout(false);

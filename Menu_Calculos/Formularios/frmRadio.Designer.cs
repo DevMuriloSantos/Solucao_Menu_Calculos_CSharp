@@ -225,6 +225,7 @@
             this.Controls.Add(this.radioCalculatorPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRadio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cálculos com RadioButton";
             this.groupBoxRb.ResumeLayout(false);
             this.groupBoxRb.PerformLayout();
