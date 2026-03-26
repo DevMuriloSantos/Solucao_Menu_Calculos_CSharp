@@ -63,7 +63,7 @@ namespace Menu_Calculos.Formularios
                 return;
             }
             
-            lblResul.Text += btn.Text;
+            // lblResul.Text += btn.Text;
             double currentValue = double.Parse(lblVisor.Text);
 
             if (!string.IsNullOrEmpty(currentOperation))
@@ -71,7 +71,6 @@ namespace Menu_Calculos.Formularios
                 result = Calculate(n1, currentValue, currentOperation);
                 lblVisor.Text = result.ToString();
                 lblResul.Text = result.ToString();
-                lblResul.Text += currentOperation;
                 n1 = result;
             }
             else
@@ -80,6 +79,7 @@ namespace Menu_Calculos.Formularios
             }
             
             currentOperation = btn.Text;
+            lblResul.Text += currentOperation;
             isNewNumber = true;
         }
 
