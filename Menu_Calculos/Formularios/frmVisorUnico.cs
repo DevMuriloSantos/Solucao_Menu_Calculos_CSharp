@@ -26,19 +26,32 @@ namespace Menu_Calculos.Formularios
         } // centraliza os componentes
         
         double n1 = 0;
-        double n2 = 0;
+        //double n2 = 0;
         double result = 0;
         string currentOperation = "";
         bool isNewNumber = true; // controla quando limpar visor
+
+        public void MessageError(string msg)
+        {
+            MessageBox.Show(msg, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            return;
+        }
         
-        private double Calculate(double a, double b, string op)
+        double Calculate(double a, double b, string op)
         {
             switch (op)
             {
                 case "+": return a + b;
                 case "-": return a - b;
                 case "x": return a * b;
-                case "/": return b != 0 ? a / b : 0;
+                case "/":
+                    if (b == 0)
+                    {
+                        MessageError("Não é possível fazer divisão por zero!");
+                        return 0;
+                    }
+                    return a / b;
                 case "^": return Math.Pow(a, b);
                 default: return b;
             }
@@ -48,6 +61,22 @@ namespace Menu_Calculos.Formularios
         {
             Button btn = (Button)sender;
             string[] operations = { "+", "-", "x", "/", "^" };
+
+            if(btn.Text == "CE")
+            {
+                lblVisor.Text = "0";
+                isNewNumber = true;
+                return;
+            } else if(btn.Text == "C")
+            {
+                lblVisor.Text = "0";
+                lblResul.Text = "";
+                n1 = 0;
+                result = 0;
+
+                currentOperation = "";
+                return;
+            }
 
             if (!operations.Contains(btn.Text))
             {
