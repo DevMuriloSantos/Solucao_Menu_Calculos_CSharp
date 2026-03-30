@@ -23,6 +23,20 @@ namespace Menu_Calculos.Formularios
             MessageBox.Show("Uma janela já foi aberta. Feche-a para abrir uma nova!",
                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
+        
+        private bool FormAberto(Type tipoForm)
+        {
+            foreach (Form form in MdiChildren)
+            {
+                if (form.GetType() == tipoForm) //tipoForm retorna qual instância atual
+                {
+                    MessageBox.Show(tipoForm.ToString());
+                    form.Focus(); // traz para frente
+                    return true; // retorna true caso já exita um form do mesmo type aberto. 
+                }
+            }
+            return false;
+        }
 
         private void MDI_Menu_Load(object sender, EventArgs e)
         {
@@ -31,7 +45,7 @@ namespace Menu_Calculos.Formularios
 
         private void comBotõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MdiChildren.Length == 0) // executa apenas se MdiChildren estiver vazio.
+            if (!FormAberto(typeof(frmCalculosBot))) // executa apenas se MdiChildren estiver vazio.
             {
                 frmCalculosBot frmCalculos = new frmCalculosBot();
                 frmCalculos.MdiParent = this; // indica se essa nova instancia é parente de MDI
@@ -81,11 +95,6 @@ namespace Menu_Calculos.Formularios
             data_hora_label.Text = $"Data: {DateTime.Now.ToString("dd/MM/yyyy")} Horas: {DateTime.Now.ToString("HH:mm:ss")}";
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void calculadoraWindowsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProcessStartInfo startInfo = new ProcessStartInfo();
@@ -110,7 +119,7 @@ namespace Menu_Calculos.Formularios
 
         private void comRadioButtonsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MdiChildren.Length == 0)
+            if (!FormAberto(typeof(frmRadio)))
             {
                 frmRadio frmRadio = new frmRadio();
                 frmRadio.MdiParent = this;
@@ -123,14 +132,9 @@ namespace Menu_Calculos.Formularios
             }
         }
 
-        private void cascataToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.LayoutMdi(MdiLayout.Cascade);
-        }
-
         private void visorÚnicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MdiChildren.Length == 0)
+            if (!FormAberto(typeof(frmVisorUnico)))
             {
                 frmVisorUnico frmVisorUnico = new frmVisorUnico();
                 frmVisorUnico.MdiParent = this;
@@ -140,6 +144,26 @@ namespace Menu_Calculos.Formularios
             {
                 MDI_Warning_Message();
             }
+        }
+        
+        private void cascataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.Cascade);
+        }
+        
+        private void horizontalmenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void vertucalmenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

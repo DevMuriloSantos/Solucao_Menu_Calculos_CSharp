@@ -81,7 +81,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(642, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(630, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,7 +99,7 @@
             this.comBotõesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("comBotõesToolStripMenuItem.Image")));
             this.comBotõesToolStripMenuItem.Name = "comBotõesToolStripMenuItem";
             this.comBotõesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
-            this.comBotõesToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.comBotõesToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.comBotõesToolStripMenuItem.Text = "Com Botões";
             this.comBotõesToolStripMenuItem.Click += new System.EventHandler(this.comBotõesToolStripMenuItem_Click);
             // 
@@ -108,15 +108,16 @@
             this.comRadioButtonsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("comRadioButtonsToolStripMenuItem.Image")));
             this.comRadioButtonsToolStripMenuItem.Name = "comRadioButtonsToolStripMenuItem";
             this.comRadioButtonsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.comRadioButtonsToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.comRadioButtonsToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.comRadioButtonsToolStripMenuItem.Text = "Com RadioButtons";
             this.comRadioButtonsToolStripMenuItem.Click += new System.EventHandler(this.comRadioButtonsToolStripMenuItem_Click);
             // 
             // especiaisToolStripMenuItem
             // 
             this.especiaisToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.visorÚnicoToolStripMenuItem, this.orientadaAObjetosToolStripMenuItem });
+            this.especiaisToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("especiaisToolStripMenuItem.Image")));
             this.especiaisToolStripMenuItem.Name = "especiaisToolStripMenuItem";
-            this.especiaisToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.especiaisToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.especiaisToolStripMenuItem.Text = "Especiais";
             // 
             // visorÚnicoToolStripMenuItem
@@ -135,13 +136,13 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(212, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(220, 6);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
+            this.sairToolStripMenuItem.Text = "ção das ";
             // 
             // janelaaToolStripMenuItem
             // 
@@ -163,12 +164,14 @@
             this.horizontalmenteToolStripMenuItem.Name = "horizontalmenteToolStripMenuItem";
             this.horizontalmenteToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.horizontalmenteToolStripMenuItem.Text = "Horizontalmente";
+            this.horizontalmenteToolStripMenuItem.Click += new System.EventHandler(this.horizontalmenteToolStripMenuItem_Click);
             // 
             // vertucalmenteToolStripMenuItem
             // 
             this.vertucalmenteToolStripMenuItem.Name = "vertucalmenteToolStripMenuItem";
             this.vertucalmenteToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.vertucalmenteToolStripMenuItem.Text = "Vertucalmente";
+            this.vertucalmenteToolStripMenuItem.Click += new System.EventHandler(this.vertucalmenteToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem
             // 
@@ -197,7 +200,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(642, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(630, 31);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -341,10 +344,10 @@
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.nameUserLabel, this.name_label, this.data_hora_label });
-            this.statusStrip1.Location = new System.Drawing.Point(0, 200);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 166);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(642, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(630, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
@@ -377,7 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 222);
+            this.ClientSize = new System.Drawing.Size(630, 188);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);

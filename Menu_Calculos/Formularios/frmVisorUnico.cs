@@ -26,7 +26,6 @@ namespace Menu_Calculos.Formularios
         } // centraliza os componentes
         
         double n1 = 0;
-        //double n2 = 0;
         double result = 0;
         string currentOperation = "";
         bool isNewNumber = true; // controla quando limpar visor
@@ -35,7 +34,6 @@ namespace Menu_Calculos.Formularios
         {
             MessageBox.Show(msg, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            return;
         }
         
         double Calculate(double a, double b, string op)
@@ -61,21 +59,63 @@ namespace Menu_Calculos.Formularios
         {
             Button btn = (Button)sender;
             string[] operations = { "+", "-", "x", "/", "^" };
+            double currentValue = double.Parse(lblVisor.Text);
 
-            if(btn.Text == "CE")
+            switch (btn.Text)
             {
-                lblVisor.Text = "0";
-                isNewNumber = true;
-                return;
-            } else if(btn.Text == "C")
-            {
-                lblVisor.Text = "0";
-                lblResul.Text = "";
-                n1 = 0;
-                result = 0;
+                case "CE":
+                    lblVisor.Text = "0";
+                    isNewNumber = true;
+                    return;
+                
+                case "C":
+                    lblVisor.Text = "0";
+                    lblResul.Text = "";
+                    n1 = 0;
+                    result = 0;
 
-                currentOperation = "";
-                return;
+                    currentOperation = "";
+                    isNewNumber = true;
+                    return;
+                
+                case "<=":
+                    if (lblVisor.Text == "0") return;
+                    else if (lblVisor.Text.Length == 1)
+                    {
+                        lblVisor.Text = "0";
+                        if (!operations.Contains(
+                                lblResul.Text.Substring
+                                    (lblResul.Text.Length - 1, 1)))
+                        {
+                            lblResul.Text = lblResul.Text.Substring(0, lblResul.Text.Length - 1);
+                        }
+                        isNewNumber = true;
+                        return;
+                    } else if (operations.Contains(lblResul.Text.Substring
+                                   (lblResul.Text.Length - 1, 1)))
+                    {
+                        lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
+                        return;
+                    }
+                
+                    lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
+                    lblResul.Text = lblResul.Text.Substring(0, lblResul.Text.Length - 1);
+                    return;
+                
+                case "=":
+                    if (currentOperation.Trim() == "")
+                    {
+                        MessageError("(Error) - Selecione uma operação para fazer o calculo!");
+                    }
+                    
+                    result = Calculate(n1, currentValue, currentOperation);
+                    lblVisor.Text = result.ToString();
+                    lblResul.Text = result.ToString();
+
+                    n1 = result;
+                    currentOperation = "";
+                    isNewNumber = true;
+                    return;
             }
 
             if (!operations.Contains(btn.Text))
@@ -93,7 +133,6 @@ namespace Menu_Calculos.Formularios
             }
             
             // lblResul.Text += btn.Text;
-            double currentValue = double.Parse(lblVisor.Text);
 
             if (!string.IsNullOrEmpty(currentOperation))
             {
