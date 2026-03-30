@@ -111,12 +111,6 @@ namespace Menu_Calculos.Formularios
             Process.Start(startInfo);
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            //frmCalculosBot frmCalculosBot = new frmCalculosBot();
-            //frmCalculosBot.();
-        }
-
         private void comRadioButtonsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!FormAberto(typeof(frmRadio)))
@@ -161,9 +155,9 @@ namespace Menu_Calculos.Formularios
             this.LayoutMdi(MdiLayout.TileVertical);
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            Close();
         }
     }
 }
