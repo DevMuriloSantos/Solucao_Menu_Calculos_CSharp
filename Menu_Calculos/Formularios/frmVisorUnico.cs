@@ -15,6 +15,7 @@ namespace Menu_Calculos.Formularios
         public frmVisorUnico()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
         
         protected override void OnResize(EventArgs e)
@@ -24,6 +25,12 @@ namespace Menu_Calculos.Formularios
             singleDisplayPanel.Left = (this.ClientSize.Width - singleDisplayPanel.Width) / 2;
             singleDisplayPanel.Top = (this.ClientSize.Height - singleDisplayPanel.Height) / 2;
         } // centraliza os componentes
+        
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            this.ActiveControl = null;
+        }
         
         double n1 = 0;
         double result = 0;
@@ -57,6 +64,7 @@ namespace Menu_Calculos.Formularios
 
         private void Botao_Click(object sender, EventArgs e)
         {
+            this.ActiveControl = null;
             Button btn = (Button)sender;
             string[] operations = { "+", "-", "x", "/", "^" };
             double currentValue = double.Parse(lblVisor.Text);
@@ -116,7 +124,21 @@ namespace Menu_Calculos.Formularios
                     currentOperation = "";
                     isNewNumber = true;
                     return;
+                
+                case ",":
+                    if (!lblVisor.Text.Contains(","))
+                    {
+                        lblVisor.Text += ",";
+                        if (lblResul.Text.Length == 0) lblResul.Text = "0";
+                            
+                        lblResul.Text += ",";
+
+                        isNewNumber = false;
+                    }
+
+                    return;
             }
+            
 
             if (!operations.Contains(btn.Text))
             {
@@ -151,11 +173,33 @@ namespace Menu_Calculos.Formularios
             isNewNumber = true;
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void frmCalculadoraVisorUnico_KeyDown(object sender, KeyEventArgs e)
         {
-            // throw new System.NotImplementedException();
-        }
+            Button btn = new Button();
+            // MessageBox.Show(e.KeyCode.ToString());
 
+            switch (e.KeyCode.ToString())
+            {
+                case "Back":
+                    btn.Text = "<=";
+                    Botao_Click(btn, EventArgs.Empty);
+                    return;
+            }
+            
+            if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9)
+            {
+                int numero = e.KeyCode - Keys.NumPad0;
+                btn.Text = numero.ToString();
+
+                Botao_Click(btn, EventArgs.Empty);
+            } else if (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
+            {
+                int numero = e.KeyCode - Keys.D0;
+                btn.Text = numero.ToString();
+
+                Botao_Click(btn, EventArgs.Empty);
+            }
+        }
         private void singleDisplayPanel_Paint(object sender, PaintEventArgs e)
         {
             

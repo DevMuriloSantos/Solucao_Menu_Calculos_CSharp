@@ -362,12 +362,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(289, 327);
+            this.ClientSize = new System.Drawing.Size(289, 325);
             this.Controls.Add(this.singleDisplayPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmVisorUnico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVisorUnico";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCalculadoraVisorUnico_KeyDown);
             this.singleDisplayPanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
