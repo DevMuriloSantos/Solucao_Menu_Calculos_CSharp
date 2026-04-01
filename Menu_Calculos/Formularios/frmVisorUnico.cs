@@ -88,32 +88,33 @@ namespace Menu_Calculos.Formularios
                 
                 case "<=":
                     if (lblVisor.Text == "0") return;
-                    else if (lblVisor.Text.Length == 1)
+                    
+                    lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
+                    
+                    if (lblResul.Text.Length > 0)
+                    {
+                        lblResul.Text = lblResul.Text.Substring(0, lblResul.Text.Length - 1);
+                    }
+                    
+                    if (lblVisor.Text == "0" || string.IsNullOrEmpty(lblVisor.Text))
                     {
                         lblVisor.Text = "0";
-                        if (!operations.Contains(
-                                lblResul.Text.Substring
-                                    (lblResul.Text.Length - 1, 1)))
+
+                        if (!lblResul.Text.Any(c => "+-x/^".Contains(c)))
                         {
-                            lblResul.Text = lblResul.Text.Substring(0, lblResul.Text.Length - 1);
+                            lblResul.Text = "";
                         }
+
                         isNewNumber = true;
-                        return;
-                    } else if (operations.Contains(lblResul.Text.Substring
-                                   (lblResul.Text.Length - 1, 1)))
-                    {
-                        lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
-                        return;
                     }
-                
-                    lblVisor.Text = lblVisor.Text.Substring(0, lblVisor.Text.Length - 1);
-                    lblResul.Text = lblResul.Text.Substring(0, lblResul.Text.Length - 1);
+
                     return;
                 
                 case "=":
                     if (currentOperation.Trim() == "")
                     {
                         MessageError("(Error) - Selecione uma operação para fazer o calculo!");
+                        return;
                     }
                     
                     result = Calculate(n1, currentValue, currentOperation);
@@ -130,7 +131,7 @@ namespace Menu_Calculos.Formularios
                     {
                         lblVisor.Text += ",";
                         if (lblResul.Text.Length == 0) lblResul.Text = "0";
-                            
+                        // MessageBox.Show(currentValue.ToString());
                         lblResul.Text += ",";
 
                         isNewNumber = false;
@@ -142,7 +143,7 @@ namespace Menu_Calculos.Formularios
 
             if (!operations.Contains(btn.Text))
             {
-                if (isNewNumber)
+                if (isNewNumber) // verifica se é um novo número que está no visor
                 {
                     lblVisor.Text = "";
                     isNewNumber = false;
@@ -182,6 +183,11 @@ namespace Menu_Calculos.Formularios
             {
                 case "Back":
                     btn.Text = "<=";
+                    Botao_Click(btn, EventArgs.Empty);
+                    return;
+                
+                case "Oemcomma":
+                    btn.Text = ",";
                     Botao_Click(btn, EventArgs.Empty);
                     return;
             }
