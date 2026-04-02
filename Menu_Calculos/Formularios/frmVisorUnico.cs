@@ -177,7 +177,7 @@ namespace Menu_Calculos.Formularios
         private void frmCalculadoraVisorUnico_KeyDown(object sender, KeyEventArgs e)
         {
             Button btn = new Button();
-            // MessageBox.Show(e.KeyCode.ToString());
+            //MessageBox.Show(e.KeyCode.ToString());
 
             switch (e.KeyCode.ToString())
             {
@@ -190,6 +190,15 @@ namespace Menu_Calculos.Formularios
                     btn.Text = ",";
                     Botao_Click(btn, EventArgs.Empty);
                     return;
+
+                case "Escape":
+                    Close();
+                    return;
+
+                case "Return":
+                    btn.Text = "=";
+                    Botao_Click(btn, EventArgs.Empty);
+                    return;
             }
             
             if (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9)
@@ -198,17 +207,43 @@ namespace Menu_Calculos.Formularios
                 btn.Text = numero.ToString();
 
                 Botao_Click(btn, EventArgs.Empty);
+
+                foreach(Control control in panel3.Controls)
+                {
+                    if (control is Button && control.Text == btn.Text)
+                    {
+                        control.BackColor = Color.Gray;
+                        break;
+                    }
+                }
             } else if (e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9)
             {
                 int numero = e.KeyCode - Keys.D0;
                 btn.Text = numero.ToString();
 
                 Botao_Click(btn, EventArgs.Empty);
+
+                foreach (Control control in panel3.Controls)
+                {
+                    if (control is Button && control.Text == btn.Text)
+                    {
+                        control.BackColor = Color.Gray;
+                        break;
+                    }
+                }
             }
         }
         private void singleDisplayPanel_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void frmVisorUnico_KeyUp(object sender, KeyEventArgs e)
+        {
+            foreach (Control control in panel3.Controls)
+            {
+                control.BackColor = Color.White;
+            }
         }
     }
 }
